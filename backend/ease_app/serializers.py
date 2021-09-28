@@ -7,30 +7,29 @@ class FoodSerializer(serializers.HyperlinkedModelSerializer):
     #     many=True,
     #     read_only=True
     # )
-
     class Meta:
         model = Food
         fields = ('id', 'title', 'photo_url','benefits', )
 
 
 class QuoteSerializer(serializers.HyperlinkedModelSerializer):
-    quotes = serializers.HyperlinkedRelatedField(
-        view_name='quote_detail',
-        many=False,
-        read_only=True
-    )
+    # quotes = serializers.HyperlinkedRelatedField(
+    #     view_name='quote_detail',
+    #     many=False,
+    #     read_only=True
+    # )
 
     class Meta:
         model = Quotes
-        fields = ('id', 'title','author',)
+        fields = ('id', 'quote','author',)
 
 
 class MeditateSerializer(serializers.HyperlinkedModelSerializer):
-    quotes = serializers.HyperlinkedRelatedField(
-        view_name='meditate_detail',
-        many=False,
-        read_only=True
-    )
+    # quotes = serializers.HyperlinkedRelatedField(
+    #     view_name='meditate_detail',
+    #     many=False,
+    #     read_only=True
+    # )
 
     class Meta:
         model = Meditate

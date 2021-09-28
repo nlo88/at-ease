@@ -10,7 +10,7 @@ class Food(models.Model):
         return self.title
 
 class Quotes(models.Model):
-    quote = models.CharField(max_length=100)
+    quote = models.TextField(max_length=5000)
     author = models.CharField(max_length=100)
 
     def __str__(self):
@@ -21,6 +21,14 @@ class Meditate(models.Model):
     moderator = models.CharField(max_length=100)
     description = models.TextField(max_length=1000)
     preview_url = models.TextField(max_length=1000)
+
+    def __str__(self):
+        return self.title
+
+class Post(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.TextField(max_length=5000)
+    user = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title

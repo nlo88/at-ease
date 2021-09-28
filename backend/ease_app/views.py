@@ -1,7 +1,6 @@
 from rest_framework import generics
-from .models import Food, Quotes, Meditate
+from .models import Food, Quotes, Meditate, Post
 from .serializers import FoodSerializer, QuoteSerializer, MeditateSerializer
-
 
 # Create your views here.
 class FoodList(generics.ListCreateAPIView):
@@ -25,5 +24,13 @@ class MeditateList(generics.ListCreateAPIView):
     serializer_class = MeditateSerializer
 
 class MeditateDetail(generics.RetrieveDestroyAPIView):
+    queryset = Meditate.objects.all()
+    serializer_class = MeditateSerializer
+
+class PostList(generics.ListCreateAPIView):
+    queryset = Meditate.objects.all()
+    serializer_class = MeditateSerializer
+
+class PostDetail(generics.RetrieveDestroyAPIView):
     queryset = Meditate.objects.all()
     serializer_class = MeditateSerializer

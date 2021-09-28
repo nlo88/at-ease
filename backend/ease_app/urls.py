@@ -12,4 +12,7 @@ urlpatterns = [
     path('meditate/',   views.MeditateList.as_view(),   name='meditate_list'),
     path('mediate/<int:pk>', views.MeditateDetail.as_view(), name='meditate_detail'),
 
+    path('post/',   views.PostList.as_view(),   name='post_list'),
+    path('post/<int:pk>', views.PostDetail.as_view(), name='post_detail'),
+
 ]

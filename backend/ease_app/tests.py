@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Food, Quote, Meditate
+from .models import Food, Quote, Meditate, Post
 
 class FoodSerializer(serializers.HyperlinkedModelSerializer):
     food = serializers.HyperlinkedRelatedField(
@@ -36,4 +36,15 @@ class MediateSerializer(serializers.HyperlinkedModelSerializer):
         model = Quote
         fields = ('id', 'curator','author','description', 'preview_url')
 
+
+class PostSerializer(serializers.HyperlinkedModelSerializer):
+    post = serializers.HyperlinkedRelatedField(
+        view_name='post_detail',
+        many=False,
+        read_only=True
+    )
+
+    class Meta:
+        model = Post
+        fields = ('id', 'title','description', )
 

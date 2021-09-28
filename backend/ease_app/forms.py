@@ -1,5 +1,5 @@
 from django import forms
-from .models import Food, Quotes, Meditate
+from .models import Food, Quotes, Meditate, Post
 
 
 class FoodForm(forms.ModelForm):
@@ -21,4 +21,11 @@ class MeditateForm(forms.ModelForm):
     class Meta:
         model = Meditate
         fields = ('title',' moderator', 'description','preview_url')
+
+
+class PostForm(forms.ModelForm):
+    
+    class Meta:
+        model = Post
+        fields = ('title',' description')
 
