@@ -26,9 +26,9 @@ class Meditate(models.Model):
         return self.title
 
 class Post(models.Model):
-    title = models.CharField(max_length=100)
-    description = models.TextField(max_length=5000)
-    user = models.CharField(max_length=100)
+    title = models.CharField(max_length=100, default='')
+    message = models.TextField(max_length=5000, default='')
+    author = models.CharField(max_length=100, default='')
 
     def __str__(self):
         return self.title
